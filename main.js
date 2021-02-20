@@ -13,6 +13,7 @@ document.addEventListener('scroll', () => {
     }
 });
 
+
 // Handle scrolling when tapping on the navbar menu 
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event)=> {
@@ -21,13 +22,23 @@ navbarMenu.addEventListener('click', (event)=> {
     if(link == null) {
         return;
     }
-    scrollIntoView(link);
+
+   console.log(event.target.dataset.link);
+   const scrollTo = document.querySelector(link);
+   scrollTo.scrollIntoView({ behavior: 'smooth'});
     });
+
+// Navbar toggle button for small screen 
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', ()=>{
+    navbarMenu.classList.toggle('open');
+});
 
 // Handle click on "contact me " button on home
 const homeContactBtn = document.querySelector('.home__contact');
 homeContactBtn.addEventListener('click', ()=> {
-    scrollIntoView('#contact')
+    const scrollTo = document.querySelector('#contact');
+    scrollTo.scrollIntoView({ behavior: 'smooth'});
 });
 
 // Make home slowly fade to transparent as the window scrolls down
@@ -62,8 +73,17 @@ workBtnContainer.addEventListener('click', (e) =>{
         return;
     }
 
+    // Remove selection from the previous item and select the new one 
+    const active = document.querySelector('.category__button.selected');
+    active.classList.remove('selected');
+    const target = 
+    e.target.nodeName === 'BUTTON' ? e.target : 
+    e.target.parentNode;
+    target.classList.add('selected');
+ 
+
     projectContainer.classList.add('anim-out');
-setTimeout(()=>{
+    setTimeout(()=>{
     projects.forEach((project) => {
         console.log(project.dataset.type);
         if(filter ==='*' || filter === project.dataset.type) {
@@ -80,5 +100,5 @@ setTimeout(()=>{
 
 function scrollIntoView(selector) {
     const scrollTo = document.querySelector(selector);
-    scrollTo.scrollIntoView({hehavior: 'smooth' });
-}
+    scrollTo.scrollIntoView({ behavior: 'smooth' });
+  }
