@@ -225,23 +225,28 @@
         <h1>My work</h1>
         <h3>Projects</h3>
         <div class="work__categories">
-          <button class="category__button active">
+          <button class="category__button active" data-filter="*">
             All<span class="category__count"> 8</span>
           </button>
-          <button class="category__button">
+          <button class="category__button" data-filter="Front-end">
             Front-end<span class="category__count"> 4</span>
           </button>
-          <button class="category__button">
+          <button class="category__button" data-filter="Back-end">
             Back-end<span class="category__count"> 3</span>
           </button>
-          <button class="category__button">
-            Design<span class="category__count"> 3</span>
+          <button class="category__button" data-filter="Design">
+            Design<span class="category__count"> 1</span>
           </button>
         </div>
 
         <div class="work__projects">
-          <a href="https://www.naver.com" class="project" target="blank"
-            ><img
+          <a
+            href="https://www.naver.com"
+            class="project"
+            target="blank"
+            data-type="Front-end"
+          >
+            <img
               src="imgs/projects/naver.png"
               class="project__img"
               alt="naver"
@@ -252,7 +257,11 @@
             </div>
           </a>
 
-          <a href="https://www.youtube.com" class="project" target="blank"
+          <a
+            href="https://www.youtube.com"
+            class="project"
+            target="blank"
+            data-type="Front-end"
             ><img
               src="imgs/projects/youtube.png"
               class="project__img"
@@ -264,7 +273,11 @@
             </div>
           </a>
 
-          <a href="https://www.kakaocorp.com" class="project" target="blank"
+          <a
+            href="https://www.kakaocorp.com"
+            class="project"
+            target="blank"
+            data-type="Front-end"
             ><img
               src="imgs/projects/kakao.png"
               class="project__img"
@@ -276,7 +289,11 @@
             </div>
           </a>
 
-          <a href="https://www.instagram.com" class="project" target="blank"
+          <a
+            href="https://www.instagram.com"
+            class="project"
+            target="blank"
+            data-type="Front-end"
             ><img
               src="imgs/projects/instagram.png"
               class="project__img"
@@ -292,6 +309,7 @@
             href="https://www.hongik.ac.kr/index.do"
             class="project"
             target="blank"
+            data-type="Back-end"
             ><img
               src="imgs/projects/hongikschool.png"
               class="project__img"
@@ -303,7 +321,11 @@
             </div>
           </a>
 
-          <a href="https://www.google.co.kr" class="project" target="blank"
+          <a
+            href="https://www.google.co.kr"
+            class="project"
+            target="blank"
+            data-type="Back-end"
             ><img
               src="imgs/projects/google.png"
               class="project__img"
@@ -315,7 +337,11 @@
             </div>
           </a>
 
-          <a href="https://ko-kr.facebook.com" class="project" target="blank"
+          <a
+            href="https://ko-kr.facebook.com"
+            class="project"
+            target="blank"
+            data-type="Back-end"
             ><img
               src="imgs/projects/facebook.png"
               class="project__img"
@@ -327,7 +353,12 @@
             </div>
           </a>
 
-          <a href="https://www.daum.net" class="project" target="blank">
+          <a
+            href="https://www.daum.net"
+            class="project"
+            target="blank"
+            data-type="Design"
+          >
             <img src="imgs/projects/daum.png" class="project__img" alt="daum" />
             <div class="project__description">
               <h3>Daum Site</h3>
@@ -401,5 +432,9 @@
         2020 Interactive developer dahankim - all rights reserved
       </p>
     </section>
+    <!-- Arrow up -->
+    <button class="arrow-up">
+      <i class="fas fa-arrow-up"></i>
+    </button>
   </body>
 </html>
